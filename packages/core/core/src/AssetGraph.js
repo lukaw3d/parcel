@@ -542,7 +542,7 @@ export default class AssetGraph extends ContentGraph<AssetGraphNode> {
 
   getIncomingDependencies(asset: Asset): Array<Dependency> {
     let nodeId = this._contentKeyToNodeId.get(asset.id);
-    if (!nodeId) {
+    if (nodeId == null) {
       return [];
     }
 
